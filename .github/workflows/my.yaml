@@ -26,9 +26,10 @@ jobs:
             uses: appleboy/ssh-action@v1.0.0
           
             with:
-              host: ${{ secrets.EC2_URL }}
+              username: ec2-user
               key: ${{ secrets.PRIVATE_KEY }}
-              ec2user: ec2-user
+              host: ${{ secrets.EC2_HOST }}
+              
               scripts: |
                 docker pull sairampandu/life
                 docker stop app || true
