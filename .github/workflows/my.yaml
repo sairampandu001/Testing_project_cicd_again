@@ -30,7 +30,7 @@ jobs:
               key: ${{ secrets.PRIVATE_KEY }}
               host: ${{ secrets.EC2_HOST }}
               
-              scripts: |
+              script: |
                 docker pull sairampandu/life
                 docker stop app || true
                 docker rm app || true
